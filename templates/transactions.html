@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transactions —AUREX</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">AUREX</div>
+    <div class="nav-links">
+      <a href="/dashboard">Dashboard</a>
+      <a href="/transactions" class="active">Transactions</a>
+      <a href="/new-transaction">New Txn</a>
+      <a href="/fraud">Fraud Alerts</a>
+      <a href="/api/logout" class="logout">Logout</a>
+    </div>
+  </nav>
+  <div class="container">
+    <h2 class="page-title">All Transactions</h2>
+    <div class="filter-bar">
+      <select id="filter-status" onchange="filterTxns()">
+        <option value="">All Status</option>
+        <option value="approved">Approved</option>
+        <option value="declined">Declined</option>
+        <option value="flagged">Flagged</option>
+      </select>
+      <input type="text" id="filter-search"
+             placeholder="Search merchant..."
+             oninput="filterTxns()">
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>ID</th><th>Card</th><th>Merchant</th>
+          <th>Category</th><th>Amount</th>
+          <th>Location</th><th>Status</th><th>Time</th>
+        </tr></thead>
+        <tbody id="txn-body"></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="/static/script.js"></script>
+  <script>loadTransactions();</script>
+</body>
+</html>

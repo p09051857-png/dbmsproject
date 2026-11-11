@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fraud Alerts — AUREX</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">AUREX</div>
+    <div class="nav-links">
+      <a href="/dashboard">Dashboard</a>
+      <a href="/transactions">Transactions</a>
+      <a href="/new-transaction">New Txn</a>
+      <a href="/fraud" class="active">Fraud Alerts</a>
+      <a href="/api/logout" class="logout">Logout</a>
+    </div>
+  </nav>
+  <div class="container">
+    <h2 class="page-title">Fraud Alerts</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Alert ID</th><th>Card</th><th>Merchant</th>
+          <th>Amount</th><th>Risk Score</th>
+          <th>Reason</th><th>Status</th><th>Action</th>
+        </tr></thead>
+        <tbody id="fraud-body"></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="/static/script.js"></script>
+  <script>loadFraudAlerts();</script>
+</body>
+</html>

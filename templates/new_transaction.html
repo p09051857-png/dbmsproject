@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Transaction — AUREX</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">AUREX</div>
+    <div class="nav-links">
+      <a href="/dashboard">Dashboard</a>
+      <a href="/transactions">Transactions</a>
+      <a href="/new-transaction" class="active">New Txn</a>
+      <a href="/fraud">Fraud Alerts</a>
+      <a href="/api/logout" class="logout">Logout</a>
+    </div>
+  </nav>
+  <div class="container">
+    <h2 class="page-title">New Transaction</h2>
+    <div class="form-card">
+      <div id="txn-result" class="msg hide"></div>
+      <div class="form-group">
+        <label>Select Card</label>
+        <select id="card_id"><option>Loading...</option></select>
+      </div>
+      <div class="form-group">
+        <label>Select Merchant</label>
+        <select id="merchant_id"><option>Loading...</option></select>
+      </div>
+      <div class="form-group">
+        <label>Amount (₹)</label>
+        <input type="number" id="amount" placeholder="e.g. 5000" min="1">
+      </div>
+      <div class="form-group">
+        <label>Location</label>
+        <input type="text" id="location" placeholder="e.g. Bengaluru, KA">
+      </div>
+      <button class="btn-primary" onclick="submitTxn()">
+        Submit Transaction
+      </button>
+    </div>
+  </div>
+  <script src="/static/script.js"></script>
+  <script>loadFormData();</script>
+</body>
+</html>
